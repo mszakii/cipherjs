@@ -53,6 +53,7 @@ function encript(text, k = key) {
   // }
   // done
   let answer = [];
+  text = text.toLowerCase();
   text = text.split("");
   text.forEach((e) => {
     for (let i = 0; i < alpha.length; i++) {
