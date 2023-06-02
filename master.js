@@ -9,7 +9,7 @@ for (let i = 0; i < 108; i++) {
     element.push(Math.ceil(Math.random() * 9));
   }
 }
-let elementSt = element.join("");
+let elementSt = `${element.join("")}-`;
 
 keyElement.innerText = elementSt;
 
@@ -68,7 +68,8 @@ function encript(text, k = key) {
 
 function decript(text, key) {
   key = key.split("-`");
-  console.log(key);
+  // console.log(key);
+  key[26] = key[26].replace("-", ""); // solve space issue by remove "-" from last element
   let answer = [];
   text = text.split("-");
   text.forEach((e) => {
